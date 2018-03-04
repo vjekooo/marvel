@@ -4,7 +4,9 @@ import React from 'react'
 const MyAvengers = () => {
   return (
     <div className="my-avengers">
-      text
+      <h3>
+        My Avenger team
+      </h3>
     </div>
   )
 }

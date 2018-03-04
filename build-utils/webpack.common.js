@@ -38,7 +38,7 @@ const config = {
 					{
 						loader: 'file-loader',
 						options: {
-							name: 'assests/img/[name].[ext]'
+							name: 'assets/img/[name].[ext]'
 						}
 					},
 					'img-loader'

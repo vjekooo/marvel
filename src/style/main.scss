@@ -1,4 +1,8 @@
 
+@import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
 * {
   padding: 0;
   margin: 0;
@@ -6,24 +10,169 @@
 }
 
 body {
-  background-color: salmon;
+  background-color: rgb(35, 35, 128);
 }
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  li {
+    margin: 0 10px 0 10px;
+  }
+}
+
+.h-1 {
+	color: #FFFFFF;
+	font-family: Anton;
+	font-size: 90px;
+	line-height: 83px;
+}
+
+.h-2 {
+	color: #D6D6D6;
+	font-family: "Varela Round";
+	font-size: 42px;
+  line-height: 48px;
+}
+
+.h-4 {
+  color: #BDBDBD;
+  font-family: Anton;
+  font-size: 35px;
+  line-height: 41px;
+}
+
+li {
+  height: 32px;
+  color: #FFFFFF;
+  font-family: Raleway;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  line-height: 16px;
+  text-align: center;
+}
+
 .container {
   display: flex;
   flex-direction: column;
-  width: 800px;
-  height: 500px;
+  width: 80%;
   margin: 0 auto;
-  
 }
-.one {
-  width: 500px;
-  padding-left: 1rem;
-  h1 {
-    color: mistyrose;
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: stretch;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  .marvel {
+    height: 36px;
+    width: 188px;
+    color: #FFFFFF;
+    font-family: "Varela Round";
+    font-size: 43.2px;
+    line-height: 36px;
+  }
+  .nav {
+    display: flex;
+    justify-content: flex-end;
+    .search {
+      margin: 0 10px 0 10px;
+    }
   }
 }
-.two {
-  width: 500px;
-  height: 100px;
+
+.join-avengers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  .join-button {
+    margin-top: 3rem;
+    height: 61px;
+    width: 266px;
+    border-radius: 2px;
+    background-color: #C22326;
+  }
+  img {
+    height: 448px;
+    width: 346px;
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 20px;
+  .avengers-list {
+    background-color: white;
+    padding: 4rem 2rem 2rem 2rem;
+    .avenger {
+      display: grid;
+      grid-template-columns: 1fr 4fr;
+      margin-top: 3rem;
+      margin-bottom: 2rem;
+      background-color: #5B8F21;
+    }
+    .avenger-description {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+    }
+    .avenger-bio {
+      color: #FFFFFF;
+      font-family: "Varela Round";
+      font-size: 12px;
+      line-height: 13px;
+      margin-top: 0.5rem;
+    }
+    img {
+      height: 124px;
+      width: 124px;
+    }
+  }
+  .my-avengers {
+    background-color: white;
+    padding: 2rem;
+  }
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  .marvel {
+    height: 24px;
+    width: 125px;
+    color: #FFFFFF;
+    font-family: "Varela Round";
+    font-size: 28.8px;
+    line-height: 24px;
+    text-align: center;
+  }
+  .footer-nav {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .copy {
+    justify-self: center;
+    margin-top: 3rem;
+    color: #CFCFCF;
+    font-family: "Raleway";
+    font-size: 12px;
+    line-height: 22px;
+  }
 }

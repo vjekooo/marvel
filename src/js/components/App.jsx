@@ -1,48 +1,40 @@
 
 import React, { Component } from 'react'
-import HeroList from './HeroList'
+import AvengersList from './AvengersList'
 import Header from './Header'
 import Footer from './Footer'
 import MyAvengers from './MyAvengers'
 import JoinAvengers from './JoinAvengers'
-import fetchMarvelData from '../api'
+import fetchedData from '../api'
 
 class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      heroes: {},
+      avengers: {},
       error: null
     }
   }
 
   componentWillMount () {
-    fetchMarvelData()
-      .then(result => {
-        this.setState({
-          heroes: result.data.results
-        })
-      })
-      .catch(e => {
-        this.setState({
-          error: e
-        })
-      })
+    this.setState({
+      avengers: fetchedData
+    })
   }
 
   render () {
-    console.log(this.state.heroes)
+    console.log(this.state.avengers)
     return (
       <div className="container">
         <Header />
         <JoinAvengers />
-        <div className="content">
-          <HeroList
-            heroes={this.state.heroes}
+        <section className="content">
+          <AvengersList
+            avengers={this.state.avengers}
           >
-          </HeroList>
+          </AvengersList>
           <MyAvengers />
-        </div>
+        </section>
         <Footer />
       </div>
     )
