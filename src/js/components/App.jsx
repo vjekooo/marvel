@@ -1,6 +1,10 @@
 
 import React, { Component } from 'react'
 import HeroList from './HeroList'
+import Header from './Header'
+import Footer from './Footer'
+import MyAvengers from './MyAvengers'
+import JoinAvengers from './JoinAvengers'
 import fetchMarvelData from '../api'
 
 class App extends Component {
@@ -12,7 +16,7 @@ class App extends Component {
     }
   }
 
-  componentDidMount () {
+  componentWillMount () {
     fetchMarvelData()
       .then(result => {
         this.setState({
@@ -29,10 +33,18 @@ class App extends Component {
   render () {
     console.log(this.state.heroes)
     return (
-      <HeroList
-        heroes={this.state.heroes}
-      >
-      </HeroList>
+      <div className="container">
+        <Header />
+        <JoinAvengers />
+        <div className="content">
+          <HeroList
+            heroes={this.state.heroes}
+          >
+          </HeroList>
+          <MyAvengers />
+        </div>
+        <Footer />
+      </div>
     )
   }
 }

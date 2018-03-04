@@ -6,7 +6,7 @@ const Hero = (props) => {
   const { heroes, heroId } = props
   const hero = heroes[heroId]
   return (
-    <div>
+    <div className="hero">
       <h1>
         {hero.name}
       </h1>

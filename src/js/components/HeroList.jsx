@@ -13,7 +13,7 @@ const HeroList = (props) => {
     />
   )
   return (
-    <div>
+    <div className="heroes">
       {listHeroes}
     </div>
   )
