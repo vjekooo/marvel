@@ -1,5 +1,9 @@
 
 import React from 'react'
+import fb from '../../assets/img/facebook.png'
+import insta from '../../assets/img/instagram.png'
+import pin from '../../assets/img/pinterest.png'
+import twitter from '../../assets/img/twitter.png'
 
 const Footer = () => {
   return (
@@ -25,7 +29,10 @@ const Footer = () => {
           </ul>
         </div>
         <div className="social">
-          icons
+          <img src={fb} />
+          <img src={insta} />
+          <img src={pin} />
+          <img src={twitter} />
         </div>
       </div>
       <div className="copy">

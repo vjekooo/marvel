@@ -23,7 +23,7 @@ const Avenger = (props) => {
 }
 
 Avenger.propTypes = {
-  avengers: PropTypes.object,
+  avengers: PropTypes.array,
   avengerId: PropTypes.string
 }
 

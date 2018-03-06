@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 
 const AvengersList = (props) => {
   const { avengers } = props
+  const avengersLength = Object.keys(avengers).length
   const listAvengers = Object.keys(avengers).map(avenger =>
     <Avenger
       key={avenger}
@@ -14,14 +15,14 @@ const AvengersList = (props) => {
   )
   return (
     <div className="avengers-list">
-      <span className="h-2">Pick an avenger</span>
+      <span className="h-2">Pick an avenger<span> ({avengersLength})</span></span>
       {listAvengers}
     </div>
   )
 }
 
 AvengersList.propTypes = {
-  avengers: PropTypes.object
+  avengers: PropTypes.array
 }
 
 export default AvengersList

@@ -120,6 +120,9 @@ header {
       font-family: "Varela Round";
       font-size: 42px;
       line-height: 48px;
+      span {
+        color: #D6D6D6;
+      }
     }
     .avenger {
       display: grid;
@@ -164,8 +167,8 @@ footer {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 6rem;
+  padding-bottom: 5rem;
   .marvel {
     height: 24px;
     width: 125px;
@@ -180,6 +183,11 @@ footer {
     grid-template-columns: auto auto auto;
     justify-content: space-between;
     align-items: center;
+  }
+  .social {
+    img {
+      padding-left: 15px;
+    }
   }
   .copy {
     justify-self: center;
