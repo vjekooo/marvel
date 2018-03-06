@@ -1,5 +1,4 @@
 
-const fetch = require('node-fetch')
 const crypto = require('crypto')
 const publicKey = '3ab9cb3d2d525e203019ad099f6fc464'
 const privateKey = 'f147975ba1cd381212e53cae6a8bb2cd319a9ac3'
@@ -30,8 +29,7 @@ const fetchAvenger = async avenger => {
   return data.data.results[0]
 }
 
-async function fetchAvengers () {
-  console.log(avengers)
+const fetchAvengers = async () => {
   const remoteAvengers = []
   await Promise.all(avengers.map(async avenger => {
     const remoteAvenger = await fetchAvenger(avenger)
