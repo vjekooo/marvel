@@ -8,9 +8,7 @@ const Avenger = (props) => {
   return (
     <Fragment>
       <div className="avenger">
-        <div className="avenger-image">
-          <img src={`${avenger.thumbnail.path}.${avenger.thumbnail.extension}`} />
-        </div>
+        <img src={`${avenger.thumbnail.path}.${avenger.thumbnail.extension}`} />
         <div className="avenger-description">
           <span className="h-4">
             {avenger.name}

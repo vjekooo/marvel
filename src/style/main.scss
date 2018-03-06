@@ -31,14 +31,8 @@ ul {
 	color: #FFFFFF;
 	font-family: Anton;
 	font-size: 90px;
-	line-height: 83px;
-}
-
-.h-2 {
-	color: #D6D6D6;
-	font-family: "Varela Round";
-	font-size: 42px;
-  line-height: 48px;
+  line-height: 90px;
+  letter-spacing: 4px;
 }
 
 .h-4 {
@@ -102,6 +96,15 @@ header {
     border: 1px solid #C22326;
     border-radius: 2px;
     background-color: #C22326;
+    span {
+      color: #FFFFFF;
+      font-family: Raleway;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      line-height: 14px;
+      text-align: center;
+    }
   }
 }
 
@@ -112,6 +115,12 @@ header {
   .avengers-list {
     background-color: white;
     padding: 4rem 2rem 2rem 2rem;
+    .h-2 {
+      color: #000000;
+      font-family: "Varela Round";
+      font-size: 42px;
+      line-height: 48px;
+    }
     .avenger {
       display: grid;
       grid-template-columns: 1fr 4fr;
@@ -132,13 +141,22 @@ header {
       margin-top: 0.5rem;
     }
     img {
-      height: 124px;
-      width: 124px;
+      height: 133px;
+      width: 133px;
     }
   }
   .my-avengers {
     background-color: white;
-    padding: 2rem;
+    padding: 4rem 2rem 2rem 2rem;
+    .h-2 {
+      height: 81px;
+      width: 302px;
+      color: #000000;
+      font-family: "Varela Round";
+      font-size: 32px;
+      line-height: 33px;
+      text-align: center;
+    }
   }
 }
 

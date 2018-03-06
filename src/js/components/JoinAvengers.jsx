@@ -11,7 +11,7 @@ const JoinAvengers = () => {
           Avengers!
         </h1>
         <button className="join-button">
-          JOIN AVENGERS
+          <span>JOIN AVENGERS</span>
         </button>
       </div>
       <img src={image} />
