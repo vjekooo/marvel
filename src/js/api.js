@@ -11,7 +11,7 @@ const fetchOptions = {
     'Accept': 'application/json'
   }
 }
-// eslint-disable-next-line
+
 const avengers = [
   1009220,
   1009368,
