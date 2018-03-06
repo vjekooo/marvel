@@ -11,7 +11,7 @@ class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      avengers: {},
+      avengers: null,
       error: null
     }
   }
@@ -23,14 +23,15 @@ class App extends Component {
   }
 
   render () {
-    console.log(this.state.avengers)
+    const { avengers } = this.state
+    console.log(avengers)
     return (
       <div className="container">
         <Header />
         <JoinAvengers />
         <section className="content">
           <AvengersList
-            avengers={this.state.avengers}
+            avengers={avengers}
           >
           </AvengersList>
           <MyAvengers />

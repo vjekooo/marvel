@@ -30,7 +30,7 @@ async function fetchMarvelData (url, index) {
     }
   })
   const data = await response.json()
-  fetchedData[index] = data.data
+  fetchedData[`avenger${index}`] = data.data.results[0]
 }
 
 export default fetchedData

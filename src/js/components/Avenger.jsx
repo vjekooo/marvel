@@ -14,7 +14,7 @@ const Avenger = (props) => {
         </div>
         <div className="avenger-description">
           <span className="h-4">
-            {avenger[0].avengerId.name}
+            {avenger.name}
           </span>
           <span className="avenger-bio">
             {avenger.description}
@@ -26,7 +26,7 @@ const Avenger = (props) => {
 }
 
 Avenger.propTypes = {
-  avengers: PropTypes.array,
+  avengers: PropTypes.object,
   avengerId: PropTypes.string
 }
 

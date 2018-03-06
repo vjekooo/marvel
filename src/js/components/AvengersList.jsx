@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 
 const AvengersList = (props) => {
   const { avengers } = props
+  console.log(Object.keys(avengers))
   const listAvengers = Object.keys(avengers).map(avenger =>
     <Avenger
       key={avenger}
