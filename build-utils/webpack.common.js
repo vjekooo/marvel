@@ -29,7 +29,7 @@ const config = {
 			},
 			{
 				test: /\.json$/,
-				use: 'json',
+				use: 'json-loader',
 				include: commonPaths.appEntry
 			},
 			{

@@ -12,6 +12,7 @@ const AvengersList = (props) => {
       avengers={avengers}
     />
   )
+  console.log(listAvengers)
   return (
     <div className="avengers-list">
       <span className="h-2">Pick an avenger</span>
@@ -21,7 +22,7 @@ const AvengersList = (props) => {
 }
 
 AvengersList.propTypes = {
-  avengers: PropTypes.array
+  avengers: PropTypes.object
 }
 
 export default AvengersList
