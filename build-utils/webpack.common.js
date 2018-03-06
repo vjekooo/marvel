@@ -34,14 +34,15 @@ const config = {
 			},
 			{
 				test: /\.(png|jpe?g|gif)$/,
-				loaders: [
+				use: [
 					{
 						loader: 'file-loader',
 						options: {
-							name: 'assets/img/[name].[ext]'
+							name: '[name].[ext]',
+							outputPath: 'assets/img/',
+							publicPath: 'assets/img/'
 						}
-					},
-					'img-loader'
+					}
 				]
 			}
 		]

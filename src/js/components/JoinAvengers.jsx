@@ -1,5 +1,6 @@
 
 import React from 'react'
+import image from '../../assets/img/image.png'
 
 const JoinAvengers = () => {
   return (
@@ -14,7 +15,7 @@ const JoinAvengers = () => {
         </button>
       </div>
       <div>
-        <img src="" />
+        <img src={image} />
       </div>
     </section>
   )
