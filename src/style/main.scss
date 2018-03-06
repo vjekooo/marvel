@@ -95,17 +95,13 @@ header {
   grid-template-columns: 1fr 1fr;
   justify-items: center;
   padding-top: 5rem;
-  padding-bottom: 5rem;
   .join-button {
     margin-top: 3rem;
     height: 61px;
     width: 266px;
+    border: 1px solid #C22326;
     border-radius: 2px;
     background-color: #C22326;
-  }
-  img {
-    height: 448px;
-    width: 346px;
   }
 }
 

@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
 
 const AvengersList = (props) => {
   const { avengers } = props
-  console.log(Object.keys(avengers))
   const listAvengers = Object.keys(avengers).map(avenger =>
     <Avenger
       key={avenger}
@@ -13,7 +12,6 @@ const AvengersList = (props) => {
       avengers={avengers}
     />
   )
-  console.log(listAvengers)
   return (
     <div className="avengers-list">
       <span className="h-2">Pick an avenger</span>

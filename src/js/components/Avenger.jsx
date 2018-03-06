@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
 const Avenger = (props) => {
   const { avengers, avengerId } = props
   const avenger = avengers[avengerId]
-  console.log(avenger)
   return (
     <Fragment>
       <div className="avenger">

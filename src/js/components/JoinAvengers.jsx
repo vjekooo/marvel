@@ -14,9 +14,7 @@ const JoinAvengers = () => {
           JOIN AVENGERS
         </button>
       </div>
-      <div>
-        <img src={image} />
-      </div>
+      <img src={image} />
     </section>
   )
 }
