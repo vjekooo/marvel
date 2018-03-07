@@ -7,6 +7,7 @@ import MyAvengers from './MyAvengers'
 import JoinAvengers from './JoinAvengers'
 import Overlay from './Overlay'
 import fetchAvengers from '../api'
+import { getDate } from '../helpers'
 
 class App extends Component {
   constructor (props) {
@@ -15,6 +16,7 @@ class App extends Component {
       avengers: {},
       currentAvenger: null,
       myAvengers: {},
+      input: '',
       fetchingAvengers: false,
       overlayVisibility: false,
       error: null
@@ -42,6 +44,32 @@ class App extends Component {
     })
   }
 
+  handleChange = (event) => {
+    this.setState({
+      input: event.target.value
+    })
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault()
+    this.addToMyAvengers()
+    this.setState({
+      overlayVisibility: false
+    })
+  }
+
+  addToMyAvengers = () => {
+    const { currentAvenger, input } = this.state
+    const myAvengers = {...this.state.myAvengers}
+    myAvengers[`avenger-${getDate()}`] = {
+      avenger: currentAvenger,
+      text: input
+    }
+    this.setState({
+      myAvengers
+    })
+  }
+
   closeOverlay = () => {
     this.setState({
       overlayVisibility: false,
@@ -50,8 +78,8 @@ class App extends Component {
   }
 
   render () {
-    const { avengers, currentAvenger, overlayVisibility } = this.state
-    console.log(avengers)
+    const { avengers, input, currentAvenger, myAvengers, overlayVisibility } = this.state
+    console.log(this.state.myAvengers)
     return (
       <Fragment>
         <div className="container">
@@ -63,7 +91,9 @@ class App extends Component {
               showAvengerOverlay={this.showAvengerOverlay}
             >
             </AvengersList>
-            <MyAvengers />
+            <MyAvengers
+              myAvengers={myAvengers}
+            />
           </section>
           <Footer />
         </div>
@@ -71,6 +101,9 @@ class App extends Component {
           overlayVisibility={overlayVisibility}
           currentAvenger={currentAvenger}
           closeOverlay={this.closeOverlay}
+          input={input}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
         />
       </Fragment>
     )

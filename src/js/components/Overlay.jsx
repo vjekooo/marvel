@@ -4,7 +4,14 @@ import PopUpAvenger from './PopUpAvenger'
 import PropTypes from 'prop-types'
 
 const Overlay = (props) => {
-  const { currentAvenger, overlayVisibility, closeOverlay } = props
+  const {
+    currentAvenger,
+    overlayVisibility,
+    closeOverlay,
+    input,
+    handleChange,
+    handleSubmit
+  } = props
   const overlayClass = overlayVisibility ? 'overlay visible' : ' overlay hidden'
   return (
     <div className={overlayClass}>
@@ -18,6 +25,9 @@ const Overlay = (props) => {
         </div>
         <PopUpAvenger
           currentAvenger={currentAvenger}
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+          input={input}
         />
       </div>
     </div>
@@ -27,7 +37,10 @@ const Overlay = (props) => {
 Overlay.propTypes = {
   currentAvenger: PropTypes.object,
   overlayVisibility: PropTypes.bool,
-  closeOverlay: PropTypes.func
+  closeOverlay: PropTypes.func,
+  handleChange: PropTypes.func,
+  handleSubmit: PropTypes.func,
+  input: PropTypes.string
 }
 
 export default Overlay
