@@ -4,13 +4,14 @@ import Avenger from './Avenger'
 import PropTypes from 'prop-types'
 
 const AvengersList = (props) => {
-  const { avengers } = props
+  const { avengers, showAvengerOverlay } = props
   const avengersLength = Object.keys(avengers).length
   const listAvengers = Object.keys(avengers).map(avenger =>
     <Avenger
       key={avenger}
       avengerId={avenger}
       avengers={avengers}
+      showAvengerOverlay={showAvengerOverlay}
     />
   )
   return (
@@ -22,7 +23,8 @@ const AvengersList = (props) => {
 }
 
 AvengersList.propTypes = {
-  avengers: PropTypes.array
+  avengers: PropTypes.array,
+  showAvengerOverlay: PropTypes.func
 }
 
 export default AvengersList

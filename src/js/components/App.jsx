@@ -13,6 +13,7 @@ class App extends Component {
     super(props)
     this.state = {
       avengers: {},
+      currentAvenger: null,
       myAvengers: {},
       fetchingAvengers: false,
       overlayVisibility: false,
@@ -34,8 +35,22 @@ class App extends Component {
       })
   }
 
+  showAvengerOverlay = (avenger) => {
+    this.setState({
+      overlayVisibility: true,
+      currentAvenger: avenger
+    })
+  }
+
+  closeOverlay = () => {
+    this.setState({
+      overlayVisibility: false,
+      currentAvenger: null
+    })
+  }
+
   render () {
-    const { avengers, overlayVisibility } = this.state
+    const { avengers, currentAvenger, overlayVisibility } = this.state
     console.log(avengers)
     return (
       <Fragment>
@@ -45,6 +60,7 @@ class App extends Component {
           <section className="content">
             <AvengersList
               avengers={avengers}
+              showAvengerOverlay={this.showAvengerOverlay}
             >
             </AvengersList>
             <MyAvengers />
@@ -53,6 +69,8 @@ class App extends Component {
         </div>
         <Overlay
           overlayVisibility={overlayVisibility}
+          currentAvenger={currentAvenger}
+          closeOverlay={this.closeOverlay}
         />
       </Fragment>
     )

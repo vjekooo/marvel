@@ -199,12 +199,78 @@ footer {
   }
 }
 
+.pop-up-avenger {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  img {
+    width: 256px;
+    height: 256px;
+  }
+  .input {
+    margin-left: 2rem;
+  }
+  textarea {
+    margin-top: 2rem;
+    height: 70px;
+    width: 100%;
+    color: #D6D6D6;
+    font-family: "Varela Round";
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .h-2 {
+    color: #C22326;
+    font-family: Anton;
+    font-size: 60px;
+    line-height: 63px;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  .add-avenger-white {
+    height: 61px;
+    width: 266px;
+    border: 1.5px solid #EAEAEA;
+    border-radius: 2px;
+    background-color: #FFFFFF;
+    color: #C22326;
+    font-family: Raleway;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    line-height: 14px;
+    text-align: center;
+    img {
+      width: 18px;
+      height: 16px;
+      margin-right: 10px;
+    }
+  }
+  .add-avenger-green {
+    height: 61px;
+    width: 266px;
+    border-radius: 2px;
+    background-color: #5B8F21;
+    color: #FFFFFF;
+    font-family: Raleway;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    line-height: 14px;
+    text-align: center;
+  }
+}
+
 .overlay {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  top: 0vh;
+  bottom: 0vh;
+  left: 0vw;
+  right: 0vw;
   padding: 10px;
   background-color: rgba(182, 180, 179, 0.8);
   &.visible {
@@ -222,5 +288,43 @@ footer {
     left: 0;
     opacity: 0;
     transition: height 0s 500ms, opacity 300ms ease-in-out;
+  }
+  .close-button{
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    &:hover {
+      &::before, &::after {
+        background:  rgb(35, 35, 128);
+      }
+    }
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      top: 50%;
+      left: 0;
+      margin-top: -1px;
+      background: #D6D6D6;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+  .overlay-content {
+    background-color: white;
+    width: 55%;
+    padding: 2rem 4rem 4rem 4rem;
+    margin: 0 auto;
+    .hold-this-button {
+      display: flex;
+      justify-content: flex-end;
+    }
   }
 }

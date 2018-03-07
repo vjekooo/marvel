@@ -3,11 +3,13 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
 const Avenger = (props) => {
-  const { avengers, avengerId } = props
+  const { avengers, avengerId, showAvengerOverlay } = props
   const avenger = avengers[avengerId]
   return (
     <Fragment>
-      <div className="avenger">
+      <div className="avenger"
+        onClick={() => showAvengerOverlay(avenger)}
+      >
         <img src={`${avenger.thumbnail.path}.${avenger.thumbnail.extension}`} />
         <div className="avenger-description">
           <span className="h-4">
@@ -24,7 +26,8 @@ const Avenger = (props) => {
 
 Avenger.propTypes = {
   avengers: PropTypes.array,
-  avengerId: PropTypes.string
+  avengerId: PropTypes.string,
+  showAvengerOverlay: PropTypes.func
 }
 
 export default Avenger
