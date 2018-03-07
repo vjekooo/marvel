@@ -28,7 +28,7 @@ const fetchAvenger = async avenger => {
   const data = await response.json()
   return data.data.results[0]
 }
-
+// ToDo: shity pattern, fix it
 const fetchAvengers = async () => {
   const remoteAvengers = []
   await Promise.all(avengers.map(async avenger => {

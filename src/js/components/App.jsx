@@ -1,10 +1,11 @@
 
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import AvengersList from './AvengersList'
 import Header from './Header'
 import Footer from './Footer'
 import MyAvengers from './MyAvengers'
 import JoinAvengers from './JoinAvengers'
+import Overlay from './Overlay'
 import fetchAvengers from '../api'
 
 class App extends Component {
@@ -12,7 +13,9 @@ class App extends Component {
     super(props)
     this.state = {
       avengers: {},
+      myAvengers: {},
       fetchingAvengers: false,
+      overlayVisibility: false,
       error: null
     }
   }
@@ -24,24 +27,34 @@ class App extends Component {
           avengers: result
         })
       })
+      .catch(error => {
+        this.setState({
+          error: error
+        })
+      })
   }
 
   render () {
-    const { avengers } = this.state
+    const { avengers, overlayVisibility } = this.state
     console.log(avengers)
     return (
-      <div className="container">
-        <Header />
-        <JoinAvengers />
-        <section className="content">
-          <AvengersList
-            avengers={avengers}
-          >
-          </AvengersList>
-          <MyAvengers />
-        </section>
-        <Footer />
-      </div>
+      <Fragment>
+        <div className="container">
+          <Header />
+          <JoinAvengers />
+          <section className="content">
+            <AvengersList
+              avengers={avengers}
+            >
+            </AvengersList>
+            <MyAvengers />
+          </section>
+          <Footer />
+        </div>
+        <Overlay
+          overlayVisibility={overlayVisibility}
+        />
+      </Fragment>
     )
   }
 }
