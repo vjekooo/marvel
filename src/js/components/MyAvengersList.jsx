@@ -17,7 +17,9 @@ const MyAvengersList = (props) => {
       <h3 className="h-2">
         My Avenger team
       </h3>
-      {showAvengers}
+      <div className="avengers">
+        {showAvengers}
+      </div>
     </div>
   )
 }

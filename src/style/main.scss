@@ -152,9 +152,11 @@ header {
 .my-avengers {
   background-color: white;
   padding: 4rem 3rem 3rem 3rem;
-  .avenger {
+  .avengers {
     margin-top: 4rem;
-    margin-bottom: 2rem;
+  }
+  .avenger {
+    margin-bottom: 3rem;
     display: flex;
     align-items: flex-end;
     width: 90%;
@@ -173,8 +175,8 @@ header {
     line-height: 41px;
   }
   img {
-    height: 124px;
-    width: 124px;
+    height: 133px;
+    width: 133px;
     opacity: 0.28;
     margin-right: 20px;
   }

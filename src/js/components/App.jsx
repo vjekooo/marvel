@@ -6,7 +6,7 @@ import Footer from './Footer'
 import MyAvengersList from './MyAvengersList'
 import JoinAvengers from './JoinAvengers'
 import Overlay from './Overlay'
-import fetchAvengers from '../api'
+import fetchAvengers, { avengers } from '../api'
 import { getDate } from '../helpers'
 
 class App extends Component {
@@ -15,14 +15,7 @@ class App extends Component {
     this.state = {
       avengers: {},
       currentAvenger: null,
-      myAvengers: {
-        // avenger01: {
-        //   avenger: {
-        //     name: 'test'
-        //   },
-        //   text: 'ovo je text'
-        // }
-      },
+      myAvengers: {},
       input: '',
       fetchingAvengers: false,
       overlayVisibility: false,
@@ -31,7 +24,7 @@ class App extends Component {
   }
 
   componentDidMount () {
-    fetchAvengers()
+    fetchAvengers(avengers)
       .then(result => {
         this.setState({
           avengers: result
@@ -80,6 +73,7 @@ class App extends Component {
   closeOverlay = () => {
     this.setState({
       overlayVisibility: false,
+      input: '',
       currentAvenger: null
     })
   }
