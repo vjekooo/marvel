@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Anton');
 @import url('https://fonts.googleapis.com/css?family=Varela+Round');
 @import url('https://fonts.googleapis.com/css?family=Raleway');
+@import "mq";
 
 * {
   padding: 0;
@@ -30,9 +31,10 @@ ul {
 .h-1 {
 	color: #FFFFFF;
 	font-family: Anton;
-	font-size: 90px;
-  line-height: 90px;
+	font-size: 5rem;
+  line-height: 5rem;
   letter-spacing: 4px;
+  text-align: center;
 }
 
 .h-4 {
@@ -52,20 +54,68 @@ li {
   text-align: center;
 }
 
+.burger {
+  width: 30px;
+  height: 15px;
+  position: relative;
+  margin: 10px auto;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+  }
+  span:nth-child(1) {
+    top: 0px;
+    transform-origin: left center;
+  }
+  span:nth-child(2) {
+    top: 8px;
+    transform-origin: left center;
+  }
+  span:nth-child(3) {
+    top: 16px;
+    transform-origin: left center;
+  }
+  &.open span:nth-child(1) {
+    transform: rotate(45deg);
+    top: -7;
+    left: 3px;
+  }
+  &.open span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+  }
+  &.open span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 21px;
+    left: 3px;
+  }
+}
+
 .container {
-  display: flex;
-  flex-direction: column;
-  width: 80%;
+  display: grid;
   margin: 0 auto;
+  @include desktop {
+    width: 80%;
+  }
 }
 
 header {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr auto;
   justify-items: stretch;
   align-items: center;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 2rem;
   .marvel {
     height: 36px;
     width: 188px;
@@ -80,16 +130,25 @@ header {
     .search {
       margin: 0 10px 0 10px;
     }
+    @include mobile {
+      display: none;
+    }
   }
 }
 
 .join-avengers {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+  "join"
+  "image"
+  "button";
   justify-items: center;
   padding-top: 5rem;
+  h1 {
+    grid-area: join;
+  }
   .join-button {
-    margin-top: 3rem;
+    grid-area: button;
     height: 61px;
     width: 266px;
     border: 1px solid #C22326;
@@ -105,11 +164,15 @@ header {
       text-align: center;
     }
   }
+  img {
+    grid-area: image;
+    margin-top: 3rem;
+  }
 }
 
 .content {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: repeat(auto-fit);
   grid-gap: 20px;
 }
 
@@ -150,6 +213,7 @@ header {
   }
 }
 .my-avengers {
+  grid-row-start: 1;
   background-color: white;
   padding: 4rem 3rem 3rem 3rem;
   .avengers {
@@ -199,11 +263,22 @@ footer {
   }
   .footer-nav {
     display: grid;
-    grid-template-columns: auto auto auto;
-    justify-content: space-between;
-    align-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-items: center;
+    ul {
+      display: flex;
+      flex-direction: column;
+    }
+    li {
+      padding: 1rem 0 1rem 0;
+    }
+  }
+  .nav {
+    margin-top: 2rem;
   }
   .social {
+    padding-top: 2rem;
     img {
       padding-left: 15px;
     }
@@ -338,7 +413,7 @@ footer {
   }
   .overlay-content {
     background-color: white;
-    width: 55%;
+    width: 90%;
     padding: 2rem 4rem 4rem 4rem;
     margin: 0 auto;
     .hold-this-button {

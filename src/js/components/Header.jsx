@@ -26,6 +26,13 @@ const Header = () => {
           search
         </span>
       </div>
+      <div className="menu">
+        <div className="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </header>
   )
 }
