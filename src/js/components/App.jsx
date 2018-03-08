@@ -3,7 +3,7 @@ import React, { Component, Fragment } from 'react'
 import AvengersList from './AvengersList'
 import Header from './Header'
 import Footer from './Footer'
-import MyAvengers from './MyAvengers'
+import MyAvengersList from './MyAvengersList'
 import JoinAvengers from './JoinAvengers'
 import Overlay from './Overlay'
 import fetchAvengers from '../api'
@@ -15,7 +15,14 @@ class App extends Component {
     this.state = {
       avengers: {},
       currentAvenger: null,
-      myAvengers: {},
+      myAvengers: {
+        // avenger01: {
+        //   avenger: {
+        //     name: 'test'
+        //   },
+        //   text: 'ovo je text'
+        // }
+      },
       input: '',
       fetchingAvengers: false,
       overlayVisibility: false,
@@ -79,7 +86,7 @@ class App extends Component {
 
   render () {
     const { avengers, input, currentAvenger, myAvengers, overlayVisibility } = this.state
-    console.log(this.state.myAvengers)
+    console.log(this.state)
     return (
       <Fragment>
         <div className="container">
@@ -91,7 +98,7 @@ class App extends Component {
               showAvengerOverlay={this.showAvengerOverlay}
             >
             </AvengersList>
-            <MyAvengers
+            <MyAvengersList
               myAvengers={myAvengers}
             />
           </section>

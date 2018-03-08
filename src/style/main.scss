@@ -36,7 +36,7 @@ ul {
 }
 
 .h-4 {
-  color: #BDBDBD;
+  color: white;
   font-family: Anton;
   font-size: 35px;
   line-height: 41px;
@@ -115,7 +115,7 @@ header {
 
 .avengers-list {
   background-color: white;
-  padding: 4rem 2rem 2rem 2rem;
+  padding: 4rem 3rem 3rem 3rem;
   .h-2 {
     color: #000000;
     font-family: "Varela Round";
@@ -151,15 +151,32 @@ header {
 }
 .my-avengers {
   background-color: white;
-  padding: 4rem 2rem 2rem 2rem;
+  padding: 4rem 3rem 3rem 3rem;
+  .avenger {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: flex-end;
+    width: 90%;
+  }
   .h-2 {
-    height: 81px;
-    width: 302px;
     color: #000000;
     font-family: "Varela Round";
     font-size: 32px;
     line-height: 33px;
     text-align: center;
+  }
+  .h-4 {
+    color: #BDBDBD;
+    font-family: Anton;
+    font-size: 35px;
+    line-height: 41px;
+  }
+  img {
+    height: 124px;
+    width: 124px;
+    opacity: 0.28;
+    margin-right: 20px;
   }
 }
 

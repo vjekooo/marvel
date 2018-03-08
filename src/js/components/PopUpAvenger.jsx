@@ -10,7 +10,6 @@ const PopUpAvenger = (props) => {
     handleChange,
     handleSubmit
   } = props
-  console.log(input)
   // ToDO: this is shit, fix it!
   const avengerName = !currentAvenger
     ? 'Avenger'
