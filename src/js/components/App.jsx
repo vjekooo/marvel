@@ -8,6 +8,7 @@ import JoinAvengers from './JoinAvengers'
 import Overlay from './Overlay'
 import fetchAvengers, { avengers } from '../api'
 import { getDate } from '../helpers'
+import { auth, database } from '../database'
 
 class App extends Component {
   constructor (props) {
@@ -66,7 +67,8 @@ class App extends Component {
       text: input
     }
     this.setState({
-      myAvengers
+      myAvengers,
+      input: ''
     })
   }
 

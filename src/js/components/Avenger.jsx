@@ -1,10 +1,12 @@
 
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
+import { sliceText } from '../helpers'
 
 const Avenger = (props) => {
   const { avengers, avengerId, showAvengerOverlay } = props
   const avenger = avengers[avengerId]
+  const shortDescription = sliceText(avenger.description)
   return (
     <Fragment>
       <div className="avenger"
@@ -16,7 +18,7 @@ const Avenger = (props) => {
             {avenger.name}
           </span>
           <span className="avenger-bio">
-            {avenger.description}
+            {shortDescription}
           </span>
         </div>
       </div>

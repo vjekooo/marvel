@@ -3,6 +3,9 @@ export function getDate () {
   return Date.now()
 }
 
-export function shortDescription (desc) {
-  return desc.split('').slice(15).join('')
+export function sliceText (text) {
+  const newText = !text.length
+    ? 'No description'
+    : text.split(' ').slice(0, 10).join(' ') + '...'
+  return newText
 }

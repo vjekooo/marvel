@@ -37,13 +37,6 @@ ul {
   text-align: center;
 }
 
-.h-4 {
-  color: white;
-  font-family: Anton;
-  font-size: 35px;
-  line-height: 41px;
-}
-
 li {
   color: #FFFFFF;
   font-family: Raleway;
@@ -149,8 +142,8 @@ header {
   }
   .join-button {
     grid-area: button;
-    height: 61px;
-    width: 266px;
+    height: 80px;
+    width: 85%;
     border: 1px solid #C22326;
     border-radius: 2px;
     background-color: #C22326;
@@ -178,21 +171,30 @@ header {
 
 .avengers-list {
   background-color: white;
-  padding: 4rem 3rem 3rem 3rem;
+  padding: 3rem 2rem 3rem 2rem;
+  display: grid;
+  justify-content: center;
   .h-2 {
     color: #000000;
     font-family: "Varela Round";
-    font-size: 42px;
+    font-size: 2rem;
     line-height: 48px;
+    text-align: center;
     span {
       color: #D6D6D6;
     }
   }
+  .h-4 {
+    color: white;
+    font-family: Anton;
+    font-size: 1.3rem;
+    line-height: 23px;
+    letter-spacing: 1px;
+  }
   .avenger {
     display: grid;
     grid-template-columns: auto 4fr;
-    margin-top: 3rem;
-    margin-bottom: 2rem;
+    margin-top: 2rem;
     background-color: #5B8F21;
   }
   .avenger-description {
@@ -208,22 +210,24 @@ header {
     margin-top: 0.5rem;
   }
   img {
-    height: 133px;
-    width: 133px;
+    height: 90px;
+    width: 90px;
   }
 }
 .my-avengers {
   grid-row-start: 1;
   background-color: white;
-  padding: 4rem 3rem 3rem 3rem;
+  padding: 2rem;
   .avengers {
-    margin-top: 4rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
   }
   .avenger {
-    margin-bottom: 3rem;
     display: flex;
-    align-items: flex-end;
-    width: 90%;
+    flex-direction: column;
+    width: 50px;
+    margin-right: 10px;
   }
   .h-2 {
     color: #000000;
@@ -235,12 +239,12 @@ header {
   .h-4 {
     color: #BDBDBD;
     font-family: Anton;
-    font-size: 35px;
-    line-height: 41px;
+    font-size: 12px;
+    line-height: 16px;
   }
   img {
-    height: 133px;
-    width: 133px;
+    height: 50px;
+    width: 50px;
     opacity: 0.28;
     margin-right: 20px;
   }
@@ -294,30 +298,32 @@ footer {
 }
 
 .pop-up-avenger {
-  display: grid;
-  grid-template-columns: auto 1fr;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   margin-top: 2rem;
   margin-bottom: 2rem;
   img {
-    width: 256px;
-    height: 256px;
+    width: 270px;
+    height: 270px;
   }
   .input {
-    margin-left: 2rem;
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: baseline;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
   }
   textarea {
-    margin-top: 2rem;
-    height: 70px;
     width: 100%;
     color: #D6D6D6;
     font-family: "Varela Round";
-    font-size: 24px;
+    font-size: 1rem;
     line-height: 30px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
   }
   .add-avenger-green {
     height: 61px;
@@ -333,6 +339,7 @@ footer {
     text-align: center;
   }
   .add-avenger-white {
+    display: none;
     height: 61px;
     width: 266px;
     border: 1.5px solid #EAEAEA;
@@ -354,17 +361,17 @@ footer {
   .h-2 {
     color: #C22326;
     font-family: Anton;
-    font-size: 60px;
+    font-size: 40px;
     line-height: 63px;
   }
 }
 
 .overlay {
-  position: absolute;
-  top: 0vh;
-  bottom: 0vh;
-  left: 0vw;
-  right: 0vw;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   padding: 10px;
   background-color: rgba(182, 180, 179, 0.8);
   &.visible {
@@ -412,13 +419,15 @@ footer {
     }
   }
   .overlay-content {
+    display: grid;
+    justify-content: center;
     background-color: white;
-    width: 90%;
-    padding: 2rem 4rem 4rem 4rem;
+    padding: 2rem 0 2rem 0;
     margin: 0 auto;
     .hold-this-button {
       display: flex;
       justify-content: flex-end;
+      width: 100%;
     }
   }
 }
