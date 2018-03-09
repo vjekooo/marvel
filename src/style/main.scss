@@ -363,6 +363,7 @@ footer {
     font-family: Anton;
     font-size: 40px;
     line-height: 63px;
+    text-align: center;
   }
 }
 
@@ -423,7 +424,7 @@ footer {
     justify-content: center;
     background-color: white;
     padding: 2rem 0 2rem 0;
-    margin: 0 auto;
+    width: 100%;
     .hold-this-button {
       display: flex;
       justify-content: flex-end;
