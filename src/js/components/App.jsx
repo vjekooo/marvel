@@ -15,6 +15,7 @@ class App extends Component {
     super(props)
     this.state = {
       avengers: {},
+      currentUser: null,
       currentAvenger: null,
       myAvengers: {},
       input: '',
@@ -25,6 +26,18 @@ class App extends Component {
   }
 
   componentDidMount () {
+    auth.onAuthStateChanged(currentUser => {
+      this.setState({
+        currentUser: currentUser
+      })
+      this.usersRef = database.ref('/users')
+      this.userRef = this.usersRef.child(currentUser.uid)
+      this.userRef.on('value', (snapshot) => {
+        this.setState({
+          myAvengers: snapshot.val().myAvengers
+        })
+      })
+    })
     fetchAvengers(avengers)
       .then(result => {
         this.setState({
@@ -66,8 +79,10 @@ class App extends Component {
       avenger: currentAvenger,
       text: input
     }
+    this.userRef.set({
+      myAvengers
+    })
     this.setState({
-      myAvengers,
       input: ''
     })
   }
@@ -81,7 +96,7 @@ class App extends Component {
   }
 
   render () {
-    const { avengers, input, currentAvenger, myAvengers, overlayVisibility } = this.state
+    const { avengers, input, currentAvenger, currentUser, myAvengers, overlayVisibility } = this.state
     console.log(this.state)
     return (
       <Fragment>
@@ -98,7 +113,9 @@ class App extends Component {
               myAvengers={myAvengers}
             />
           </section>
-          <Footer />
+          <Footer
+            currentUser={currentUser}
+          />
         </div>
         <Overlay
           overlayVisibility={overlayVisibility}

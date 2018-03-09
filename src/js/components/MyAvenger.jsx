@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
 const MyAvenger = (props) => {
   const { myAvengers, avengerId } = props
   const avenger = myAvengers[avengerId]
-  console.log(avenger.avenger)
   return (
     <div className="avenger">
       <img src={`${avenger.avenger.thumbnail.path}.${avenger.avenger.thumbnail.extension}`} />

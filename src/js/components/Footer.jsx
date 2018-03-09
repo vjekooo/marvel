@@ -1,11 +1,18 @@
 
 import React from 'react'
+import PropTypes from 'prop-types'
 import fb from '../../assets/img/facebook.png'
 import insta from '../../assets/img/instagram.png'
 import pin from '../../assets/img/pinterest.png'
 import twitter from '../../assets/img/twitter.png'
+import SignIn from './SignIn'
+import CurrentUser from './CurrentUser'
 
-const Footer = () => {
+const Footer = (props) => {
+  const { currentUser } = props
+  const user = !currentUser
+    ? <SignIn />
+    : <CurrentUser currentUser={currentUser} />
   return (
     <footer>
       <div className="footer-nav">
@@ -26,6 +33,9 @@ const Footer = () => {
             <li>
               <a href="#">Join</a>
             </li>
+            {
+              user
+            }
           </ul>
         </div>
         <div className="social">
@@ -42,6 +52,10 @@ const Footer = () => {
       </div>
     </footer>
   )
+}
+
+Footer.propTypes = {
+  currentUser: PropTypes.object
 }
 
 export default Footer
